@@ -4,6 +4,8 @@
   "description": "Allow generating letsencrypt https keys",
   "main": "src/index.js",
   "scripts": {
+    "start": "pm2 start ./src/index.js --name \"letsencrypt_cert_server\"",
+    "stop": "pm2 delete ./src/index.js --name \"letsencrypt_cert_server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +19,7 @@
   },
   "homepage": "https://github.com/alsack/letsencrypt_server#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node_web_server": "git+https://github.com/alsack/node_web_server.git"
   }
 }

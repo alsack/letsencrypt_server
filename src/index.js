@@ -1,9 +1,9 @@
-const express = require('express');
-const path = require('path');
+const router = require('./router.js');
 
-router = express.Router();
+// launch server
+const nodeWebServer = require('node_web_server/src/index.js');
 
-var publicDir = path.resolve(__dirname, 'public/.well-known');
-router.use('/', express.static(publicDir));
+// add routes
+nodeWebServer.app.use('/.well-known', router);
 
-module.exports = router;
+module.exports = {nodeWebServer};
